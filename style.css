@@ -220,3 +220,303 @@ section {
 .footer .share img:hover {
     background-color: var(--main-color);
 }
+
+/* ==================== CARRINHO ==================== */
+
+.carrinho {
+    padding-top: 120px;
+    min-height: 70vh;
+}
+
+.cart-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    background-color: var(--black);
+    border: var(--border);
+    padding: 2rem;
+    gap: 2rem;
+    border-radius: 0.5rem;
+}
+
+.cart-item img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+.cart-item-info {
+    flex: 1;
+}
+
+.cart-item-info h3 {
+    color: #fff;
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.cart-item-info p {
+    color: #ccc;
+    font-size: 1.6rem;
+}
+
+.cart-item-price {
+    text-align: right;
+    min-width: 140px;
+}
+
+.cart-item-price .price {
+    font-size: 2.4rem;
+    color: var(--main-color);
+    margin-bottom: 1rem;
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.quantity-control button {
+    background: var(--main-color);
+    color: #fff;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+.cart-item button.remover {
+    background: #c0392b;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.cart-total {
+    text-align: center;
+    padding: 3rem 0;
+    border-top: var(--border);
+}
+
+.cart-total h3 {
+    font-size: 3rem;
+    color: #fff;
+    margin-bottom: 2rem;
+}
+
+.empty-cart {
+    color: #fff;
+    font-size: 2rem;
+}
+
+.empty-cart .btn {
+    margin-top: 2rem;
+}
+
+/* ==================== RESPONSIVIDADE - MOBILE ==================== */
+
+@media (max-width: 768px) {
+    
+    :root {
+        font-size: 9px; /* diminui um pouco a base */
+    }
+
+    .header section {
+        padding: 1rem 1.5rem;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .navbar {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+
+    .navbar a {
+        font-size: 1.8rem;
+        margin: 0;
+    }
+
+    .icons {
+        order: 2;
+    }
+
+    .home-container section {
+        min-height: 350px;
+        padding: 2rem 1.5rem;
+    }
+
+    .content h3 {
+        font-size: 3.8rem;
+    }
+
+    .content p {
+        font-size: 1.8rem;
+    }
+
+    /* Produtos */
+    .products .box-container {
+        grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+        gap: 2rem;
+    }
+
+    .products .box {
+        padding: 3rem 2rem;
+    }
+
+    .products .box img {
+        height: 14rem;
+    }
+
+    /* Carrinho */
+    .carrinho {
+        padding-top: 100px;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+        padding: 2rem;
+    }
+
+    .cart-item img {
+        width: 100%;
+        max-width: 180px;
+        height: auto;
+    }
+
+    .cart-item-price {
+        text-align: left;
+        width: 100%;
+    }
+
+    .title {
+        font-size: 3.2rem;
+    }
+
+    .btn {
+        padding: 1.2rem 2.5rem;
+        font-size: 1.8rem;
+    }
+}
+
+/* ==================== RESPONSIVIDADE PARA CELULAR (MOBILE) ==================== */
+
+@media (max-width: 768px) {
+    
+    :root {
+        font-size: 9px;           /* Reduz um pouco o tamanho base das fontes */
+    }
+
+    /* Header - fica melhor em celular */
+    .header section {
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding: 1rem 1.5rem;
+    }
+
+    .navbar {
+        width: 100%;
+        justify-content: center;
+        gap: 1.2rem;
+        order: 3;                 /* Coloca o menu embaixo */
+    }
+
+    .navbar a {
+        font-size: 1.7rem;
+    }
+
+    .icons {
+        order: 2;
+    }
+
+    /* Home */
+    .home-container section {
+        min-height: 320px;
+        padding: 2rem 1.5rem;
+    }
+
+    .content h3 {
+        font-size: 3.5rem;
+    }
+
+    .content p {
+        font-size: 1.7rem;
+    }
+
+    /* Produtos */
+    .products .box-container {
+        grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+        gap: 2rem;
+    }
+
+    .products .box {
+        padding: 3rem 2rem;
+    }
+
+    /* Carrinho */
+    .carrinho {
+        padding: 100px 1.5rem 3rem;
+    }
+
+    .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+        padding: 2rem;
+    }
+
+    .cart-item img {
+        width: 100%;
+        max-width: 200px;
+        height: auto;
+    }
+
+    .cart-item-price {
+        text-align: left;
+        width: 100%;
+    }
+
+    .title {
+        font-size: 3rem;
+    }
+
+    .btn {
+        padding: 1.2rem 2.5rem;
+        font-size: 1.7rem;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Telas muito pequenas (celulares menores) */
+@media (max-width: 480px) {
+    .products .box-container {
+        grid-template-columns: 1fr;   /* 1 produto por linha */
+    }
+
+    .navbar a {
+        font-size: 1.6rem;
+    }
+
+    .content h3 {
+        font-size: 3rem;
+    }
+}

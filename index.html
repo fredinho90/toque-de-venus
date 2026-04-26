@@ -16,22 +16,26 @@
 <body>
     <header class="header">
         <section>
-            <a href="#" class="logo">
+            <a href="index.html" class="logo">
                 <img src="./img/logo.png" alt="logo">
             </a>
 
             <nav class="navbar">
-                <a href="#">Home</a>
-                <a href="#about">Sobre</a>
-                <a href="#products">Produtos</a>
-                <a href="#review">Avaliações</a>
-                <a href="#address">Endereço</a>
+                <a href="index.html">Home</a>
+                <a href="index.html#about">Sobre</a>
+                <a href="index.html#products">Produtos</a>
+                <a href="carrinho.html">Carrinho</a>
+                <a href="index.html#address">Endereço</a>
             </nav>
+
             <div class="icons">
                 <img width="30" height="30" src="https://img.icons8.com/ios-filled/30/ffffff/search--v2.png"
-                    alt="search--v2" />
-                <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/ffffff/shopping-cart--v1.png"
-                    alt="shopping-cart--v1" />
+                    alt="search" />
+
+                <a href="carrinho.html" style="position: relative; display: inline-block;">
+                    <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/ffffff/shopping-cart--v1.png"
+                        alt="shopping-cart--v1" />
+                </a>
             </div>
         </section>
     </header>
@@ -78,26 +82,39 @@
         <h2 class="title">Nossos <span>Produtos</span></h2>
 
         <div class="box-container">
+            <!-- Produto 1 -->
             <div class="box">
-                <img src="./img/Produto-1.png" alt="Produto-1">
-                <h3>Conjunto Short</h3>
+                <img src="./img/Produto-1.png" alt="Conjunto Short Rosa">
+                <h3>Conjunto Short Rosa</h3>
                 <div class="price">R$ 69,99 <span>R$ 89,99</span></div>
-                <a href="#" class="btn">Adicione ao Carrinho</a>
+                <button onclick="adicionarAoCarrinho(1, 'Conjunto Short Rosa', 69.99, './img/Produto-1.png')"
+                    class="btn">
+                    Adicionar ao Carrinho
+                </button>
             </div>
+
+            <!-- Produto 2 -->
             <div class="box">
-                <img src="./img/Produto-2.png" alt="Produto-2">
-                <h3>Conjunto Short</h3>
+                <img src="./img/Produto-2.png" alt="Conjunto Short Preto">
+                <h3>Conjunto Short Preto</h3>
                 <div class="price">R$ 69,99 <span>R$ 89,99</span></div>
-                <a href="#" class="btn">Adicione ao Carrinho</a>
+                <button onclick="adicionarAoCarrinho(2, 'Conjunto Short Preto', 69.99, './img/Produto-2.png')"
+                    class="btn">
+                    Adicionar ao Carrinho
+                </button>
             </div>
+
+            <!-- Produto 3 -->
             <div class="box">
-                <img src="./img/Produto-3.png" alt="Produto-3">
-                <h3>Conjunto Short</h3>
+                <img src="./img/Produto-3.png" alt="Conjunto Short Verde">
+                <h3>Conjunto Short Verde</h3>
                 <div class="price">R$ 69,99 <span>R$ 89,99</span></div>
-                <a href="#" class="btn">Adicione ao Carrinho</a>
+                <button onclick="adicionarAoCarrinho(3, 'Conjunto Short Verde', 69.99, './img/Produto-3.png')"
+                    class="btn">
+                    Adicionar ao Carrinho
+                </button>
             </div>
         </div>
-
     </section>
     <section class="address" id="address">
         <h2 class="title">Nosso <span>Endereço</span></h2>
@@ -118,6 +135,9 @@
         </div>
 
     </section>
+
+    <script src="script.js"></script>
+
 </body>
 
 </html>
