@@ -520,3 +520,331 @@ section {
         font-size: 3rem;
     }
 }
+
+/* ==================== PÁGINA DE PRODUTO ==================== */
+
+.produto-detalhe {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.produto-container {
+    display: flex;
+    gap: 5rem;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.produto-imagem {
+    flex: 1;
+    min-width: 300px;
+    max-width: 550px;           /* limita o tamanho máximo */
+}
+
+.produto-imagem img {
+    width: 100%;
+    height: auto;
+    max-height: 650px;          /* evita que fique gigante demais */
+    object-fit: contain;        /* mantém proporção sem distorcer */
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+    
+    /* Melhora qualidade da imagem */
+    image-rendering: -webkit-optimize-contrast; /* para Chrome/Edge */
+    image-rendering: crisp-edges;               /* para Firefox */
+    -ms-interpolation-mode: bicubic;           /* para IE/Edge antigo */
+}
+
+.produto-info {
+    flex: 1;
+    min-width: 300px;
+}
+
+.produto-info h2 {
+    font-size: 3.5rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.cores {
+    display: flex;
+    gap: 12px;
+}
+
+.cor {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 3px solid #fff;
+    transition: all 0.3s;
+}
+
+.cor:hover {
+    transform: scale(1.15);
+    border-color: var(--main-color);
+}
+
+.cor.selecionada {
+    border-color: var(--main-color);
+    box-shadow: 0 0 0 4px rgba(211, 173, 127, 0.3);
+}
+
+/* Ajuste para mobile */
+@media (max-width: 768px) {
+    .produto-container {
+        gap: 3rem;
+    }
+    
+    .produto-info h2 {
+        font-size: 2.8rem;
+    }
+}
+
+/* ==================== RODAPÉ ==================== */
+
+.footer {
+    text-align: center;
+    padding: 4rem 2rem 3rem;
+    border-top: var(--border);
+    background-color: var(--bg);
+}
+
+.copyright {
+    margin-top: 2.5rem;
+    color: #777;
+    font-size: 1.5rem;
+}
+
+.copyright p {
+    margin: 0.6rem 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .footer {
+        padding: 3rem 1.5rem 2rem;
+    }
+    
+    .copyright {
+        font-size: 1.4rem;
+    }
+}
+
+/* ==================== CHECKOUT ==================== */
+
+.checkout-container {
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.checkout-form {
+    background-color: var(--black);
+    padding: 6rem;
+    border: var(--border);
+    border-radius: 6px;
+}
+
+.checkout-form h3 {
+    color: var(--main-color);
+    margin-bottom: 2rem;
+    font-size: 2.4rem;
+}
+
+.form-group {
+    margin-bottom: 1.8rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.8rem;
+    color: #ddd;
+    font-size: 1.7rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 1.2rem 1.5rem;
+    background-color: #1a1a1a;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 6px;
+    color: #fff;
+    font-size: 1.7rem;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--main-color);
+    box-shadow: 0 0 0 3px rgba(211, 173, 127, 0.2);
+}
+
+.payment-options {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-top: 1rem;
+}
+
+.payment-option {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: #1a1a1a;
+    padding: 1.2rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.payment-option:hover {
+    background-color: #252525;
+}
+
+.payment-option input[type="radio"] {
+    accent-color: var(--main-color);
+}
+
+.checkout-resumo {
+    background-color: var(--black);
+    padding: 3rem;
+    border: var(--border);
+    border-radius: 8px;
+    height: fit-content;
+    position: sticky;
+    top: 120px;
+}
+
+.checkout-resumo h3 {
+    color: var(--main-color);
+    margin-bottom: 2rem;
+    font-size: 2.4rem;
+}
+
+.resumo-itens {
+    margin-bottom: 2rem;
+}
+
+.item-resumo {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.item-resumo:last-child {
+    border-bottom: none;
+}
+
+.resumo-total {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: var(--border);
+}
+
+.resumo-total p {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.8rem 0;
+    font-size: 1.8rem;
+}
+
+.resumo-total hr {
+    border: none;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    margin: 1.5rem 0;
+}
+
+.resumo-total h3 {
+    display: flex;
+    justify-content: space-between;
+    font-size: 2.6rem;
+    color: #fff;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+    .checkout-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .checkout-resumo {
+        position: static;
+    }
+}
+
+@media (max-width: 768px) {
+    .checkout-form,
+    .checkout-resumo {
+        padding: 2rem;
+    }
+}
+/* Correções específicas para Checkout */
+
+.checkout-form .payment-option {
+    color: #fff !important;
+    background-color: #1a1a1a;
+}
+
+.checkout-form .payment-option span {
+    color: #fff !important;
+    font-size: 1.7rem;
+}
+
+.checkout-form .payment-option:hover {
+    background-color: #252525;
+}
+
+.checkout-form input[type="radio"] {
+    accent-color: var(--main-color);
+}
+
+/* Melhorar visual dos inputs */
+.checkout-form input {
+    color: #fff !important;
+}
+
+.checkout-form input::placeholder {
+    color: #888;
+}
+
+/* Ajuste no resumo */
+.checkout-resumo {
+    color: #fff;
+}
+
+.checkout-resumo h3 {
+    color: var(--main-color);
+}
+
+.resumo-total p {
+    color: #ddd;
+}
+
+.resumo-total h3 {
+    color: #fff;
+}
+
+/* ==================== HOVER DO NOME DO PRODUTO ==================== */
+
+/* Cor normal do nome */
+.products .box-container .box h3 {
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+/* Quando passar o mouse no card inteiro */
+.products .box-container .box:hover h3 {
+    color: var(--black) !important;
+}
+
+/* Garantia extra caso o nome esteja dentro de um link */
+.products .box-container .box a:hover h3,
+.products .box-container .box h3:hover {
+    color: var(--black) !important;
+}
+

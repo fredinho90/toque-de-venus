@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Produto - Toque de Vênus</title>
+</head>
+
+<body>
+    <header class="header">
+        <section>
+            <a href="index.html" class="logo">
+                <img src="./img/logo.png" alt="logo">
+            </a>
+
+            <nav class="navbar">
+                <a href="index.html">Home</a>
+                <a href="index.html#about">Sobre</a>
+                <a href="index.html#products">Produtos</a>
+                <a href="carrinho.html">Carrinho</a>
+                <a href="index.html#address">Endereço</a>
+            </nav>
+
+            <div class="icons">
+                <img width="30" height="30" src="https://img.icons8.com/ios-filled/30/ffffff/search--v2.png"
+                    alt="search" />
+                <a href="carrinho.html" style="position: relative; display: inline-block;">
+                    <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/ffffff/shopping-cart--v1.png"
+                        alt="shopping-cart--v1" />
+                </a>
+            </div>
+        </section>
+    </header>
+
+    <section class="produto-detalhe" style="padding-top: 120px; padding-bottom: 6rem;">
+        <div class="produto-container">
+
+            <div class="produto-imagem">
+                <img id="produto-img" src="./img/Produto-1.png" alt="Conjunto Short Preto">
+            </div>
+
+            <div class="produto-info">
+                <h2 id="produto-nome">Conjunto Short Preto</h2>
+
+                <!-- Preços corrigidos -->
+                <div class="price" style="margin: 1.5rem 0 2rem 0;">
+                    <span style="font-size: 3.8rem; color: var(--main-color); font-weight: bold;">
+                        R$ 69,99
+                    </span>
+                    <span style="font-size: 2.2rem; text-decoration: line-through; color: #888; margin-left: 15px;">
+                        R$ 89,99
+                    </span>
+                </div>
+
+                <p id="produto-descricao"
+                    style="font-size: 1.8rem; line-height: 1.8; color: #ddd; margin-bottom: 2.5rem;">
+                    Conjunto Fitness Premium Com Short E Top De Alta Compressão.
+                    Tecido Tecnológico De Secagem Rápida, Modelagem Que Valoriza O Corpo E Acabamento Sofisticado.
+                </p>
+
+                <div class="produto-opcoes" style="margin-bottom: 3rem;">
+                    <label style="font-size: 1.9rem; color: #fff; display: block; margin-bottom: 1rem;">Cor:</label>
+                    <div class="cores">
+                        <span class="cor selecionada" style="background: #ff69b4;" onclick="mudarCor(this)"></span>
+                        <span class="cor" style="background: #000;" onclick="mudarCor(this)"></span>
+                        <span class="cor" style="background: #228B22;" onclick="mudarCor(this)"></span>
+                    </div>
+                </div>
+
+                <button onclick="adicionarAoCarrinhoDoProduto()" class="btn">
+                    Adicionar ao Carrinho
+                </button>
+
+                <a href="index.html#products" class="btn" style="background: #333; margin-top: 1rem;">
+                    Voltar para Produtos
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="footer">
+        <div class="share">
+            <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/ffffff/instagram-new.png"
+                alt="instagram" />
+            <img width="30" height="30" src="https://img.icons8.com/ios-filled/30/ffffff/facebook-new.png"
+                alt="facebook" />
+            <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/ffffff/twitter--v1.png"
+                alt="twitter" />
+        </div>
+
+        <div class="copyright">
+            <p>&copy; 2026 Toque de Vênus - Amorim Designer. Todos os direitos reservados.</p>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+
+    <h1 id="nome"></h1>
+    <img id="imagem" style="width:300px;">
+    <p id="preco"></p>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const id = params.get("id");
+
+        const produtos = {
+            1: {
+                nome: "Conjunto Short Preto",
+                preco: 69.99,
+                precoAntigo: 89.99,
+                imagem: "./img/Produto-1.png",
+                descricao: "Conjunto Fitness Premium com Short e Top de alta compressão. Tecido tecnológico de secagem rápida e modelagem que valoriza o corpo."
+            },
+            2: {
+                nome: "Conjunto Calça Cinza",
+                preco: 69.99,
+                precoAntigo: 89.99,
+                imagem: "./img/Produto-2.png",
+                descricao: "Conjunto fitness com calça de alta elasticidade, conforto extremo e design moderno para treinos intensos."
+            },
+            3: {
+                nome: "Conjunto Short Verde",
+                preco: 69.99,
+                precoAntigo: 89.99,
+                imagem: "./img/Produto-3.png",
+                descricao: "Conjunto verde elegante com short e top ajustável, ideal para treinos e uso casual com estilo."
+            }
+        };
+
+        const produto = produtos[id];
+
+        if (produto) {
+            document.getElementById("produto-nome").innerText = produto.nome;
+            document.getElementById("produto-img").src = produto.imagem;
+            document.getElementById("produto-descricao").innerText = produto.descricao;
+
+            // Atualiza preços
+            const priceContainer = document.querySelector(".price");
+            priceContainer.innerHTML = `
+        <span style="font-size: 3.8rem; color: var(--main-color); font-weight: bold;">
+            R$ ${produto.preco.toFixed(2)}
+        </span>
+        <span style="font-size: 2.2rem; text-decoration: line-through; color: #888; margin-left: 15px;">
+            R$ ${produto.precoAntigo.toFixed(2)}
+        </span>
+    `;
+        } else {
+            document.body.innerHTML = "<h1>Produto não encontrado</h1>";
+        }
+    </script>
